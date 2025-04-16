@@ -21,12 +21,6 @@ urut_kel_asc <- data1[order(data1$Kel), ]
 # 5. Urutkan berdasarkan Kelompok dan respon secara descending
 urut_kel_resp_desc <- data1[order(-data1$Kel, -data1$resp), ]
 
-# 6. Gabungkan data1 dengan tabel1 berdasarkan peubah pertama (kolom 'A')
-# Buat contoh tabel1 sebagai pasangan data (misalnya tambahan data)
-tabel1 <- data.frame(
-  A = c("A1", "A2", "A3", "A4"),
-  info = c("Alpha", "Beta", "Gamma", "Delta")
-)
 
 # Gabungkan menggunakan merge
 gabung <- merge(data1, tabel1, by = "A")
