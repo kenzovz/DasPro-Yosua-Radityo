@@ -1,7 +1,7 @@
 #OUTPUT 1
-A <- c("A1", "A1", "A2", "A2", "A3", "A3", "A4", "A4")
-Kel <- c(1, 2, 1, 2, 1, 2, 1, 2)
-resp <- c(1.000000, 1.428571, 1.857143, 2.85714, 2.714286, 3.142857, 3.571429, 4.000000) 
+A <- c("A1", "A1", "A2", "A2", "A3", "A3", "A4", "A4") # nolint
+Kel <- c(1, 2, 1, 2, 1, 2, 1, 2) # nolint
+resp <- c(1.000000, 1.428571, 1.857143, 2.85714, 2.714286, 3.142857, 3.571429, 4.000000)  # nolint
 
 
 data1 <- data.frame(A, Kel, resp)
@@ -13,7 +13,7 @@ data1$baru <- 8:1
 kelompok_1 <- subset(data1, Kel == 1)
 
 # 3. Ambil data yang termasuk kelompok 1 atau A1
-kelompok_1_atau_A1 <- subset(data1, Kel == 1 | A == "A1")
+kelompok_1_atau_A1 <- subset(data1, Kel == 1 | A == "A1") # nolint
 
 # 4. Urutkan data berdasarkan Kelompok secara ascending
 urut_kel_asc <- data1[order(data1$Kel), ]
@@ -21,6 +21,11 @@ urut_kel_asc <- data1[order(data1$Kel), ]
 # 5. Urutkan berdasarkan Kelompok dan respon secara descending
 urut_kel_resp_desc <- data1[order(-data1$Kel, -data1$resp), ]
 
+# 6. Gabungkan data1 dengan tabel1 berdasarkan peubah pertama (kolom 'A')
+tabel1 <- data.frame(
+  A = c("A1", "A2", "A3", "A4"),
+  info = c("Alpha", "Beta", "Gamma", "Delta")
+)
 
 # Gabungkan menggunakan merge
 gabung <- merge(data1, tabel1, by = "A")
